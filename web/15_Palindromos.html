@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ANP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css"> 
+        body{margin: 10%;background-color: #ddd;} 
+        #consejo{text-align: right}
+        h1{text-align: center}
+        #firma{font-style: italic;text-align: right;color: red;}  
+
+    </style>
+    <script type="text/javascript">
+        window.onload = funcionPalindromos;
+        function funcionPalindromos() {
+            var textIn = prompt("Introduzca una cadena de texto");
+            var textIn2 = "";
+            var palindromo = textIn.split("").reverse().join("");
+            var alReves = textIn.split(" ").reverse().join(" ");
+            var alReves2Letras = "";
+        
+            for (i = 0; i < textIn.length; i = i + 2) {
+                textIn2 += textIn.split(" ").join(" ").substring(i, i + 2) + "|";
+            }
+      
+            alReves2Letras = textIn2.split("|").reverse().join(" ");
+      
+      
+            document.getElementById('mostrar').innerHTML = "<p>La cadena de texto introducida es: <strong>" + textIn + "</strong><br/><br/>"
+                + "El palíndromo de esta cadena es: <strong>" + textIn.split("").reverse().join("") + "</strong><br/><br/>"
+                + "El texto al revés palabra por palabras es: <strong>" + textIn.split(" ").reverse().join(" ") + "</strong><br/><br/>"
+                + "El texto al revés de dos en dos letras es: <strong>" + textIn2.split("|").reverse().join(" ") + "</strong></p>";
+        }
+  
+      
+    </script>
+</head>
+<body>
+<h1>Ejercicio 15: Palíndromos.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+</body>
+</html>

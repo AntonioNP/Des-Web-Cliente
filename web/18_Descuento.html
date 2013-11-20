@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+         body{margin: 10%;background-color: #ddd;} 
+        #consejo{text-align: right}
+        h1{text-align: center}
+        #firma{font-style: italic;text-align: right;color: red;}  
+        </style>
+        <script type="text/javascript">
+            window.onload = descuentos;
+            function descuentos() {
+                var articulo = parseFloat(prompt("Importe del artículo"));
+                var existencias = parseInt(prompt("Stock del artículo"));
+                var descuento = 0;
+                var total = 0;
+                var conDescuento = 0;
+
+                if (articulo < 100 && existencias < 10) {
+                    descuento = 2;
+                }
+                if (articulo < 100 && existencias < 100) {
+                    descuento = 10;
+                }
+                if (articulo < 100 && existencias < 1000) {
+                    descuento = 25;
+                }
+                if (100 <= articulo <= 1000 && existencias < 10) {
+                    descuento = 4;
+                }
+                if (100 <= articulo <= 1000 && existencias < 1000) {
+                    descuento = 8;
+                }
+                if (articulo >= 1000 && existencias < 100) {
+                    descuento = 3;
+                }
+                else if (articulo >= 1000 && 100 <= existencias <= 200) {
+                    descuento = 5;
+                }
+                if (articulo >= 1000 && existencias > 200) {
+                    descuento = 7;
+                }
+
+                total = articulo * existencias;
+                conDescuento = parseFloat(total * ((100 - descuento) / 100));
+                conDescuento = Math.round(conDescuento * 100) / 100;
+
+                document.getElementById('mostrar').innerHTML = "<p>Descuento para " + existencias + " unidades a " + articulo + " € la unidad, es del " + descuento + "%.<br/>Importe total: " + conDescuento + " €.</p>";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 18: Descuento.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

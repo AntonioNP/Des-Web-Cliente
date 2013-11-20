@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = metodoTexto; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function metodoTexto() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que a partir de un texto introducido 
+                 * muestre:
+                 * el número de caracteres que contiene
+                 * el número de palabras que contiene
+                 * el número de dígitos que contiene
+                 * el número de minúsculas que contiene
+                 * el número de mayúsculas que contiene
+                 * el número de símbolos que contiene
+                 */
+                var texto = prompt("Introduzca un texto: ");
+                var mensaje = "";
+                var palabras = 0
+                var digitos = 0;
+                var inicio = /^ /;
+                var ffinal = / $/;
+                var dobleEspacio = /[ ]+/g;
+                var cifra = /d/g;
+                var num = 0;
+                var totalDigitos = texto.match(/[0-9]/g);
+                var totalMayusculas = texto.match(/[A-Z]/g);
+                var totalMinusculas = texto.match(/[a-z]/g);
+
+                texto = texto.replace(dobleEspacio, " ");
+                texto = texto.replace(inicio, "");
+                texto = texto.replace(ffinal, "");
+
+                mensaje = texto.split(" ");
+                palabras = mensaje.length;
+                
+                var textoSinEspacios = texto.replace(dobleEspacio, "");
+                var totalSimbolos = textoSinEspacios.match(/[^A-Za-z0-9]/g);
+                
+                if (totalDigitos !== null){
+                    totalDigitos = texto.match(/[0-9]/g).length;
+                }
+                else {
+                    totalDigitos = 0;
+                }
+            
+                if (totalMayusculas !== null){
+                    totalMayusculas = texto.match(/[A-Z]/g).length;
+                }
+                else {
+                    totalMayusculas = 0;
+                }
+            
+                if (totalMinusculas !== null){
+                    totalMinusculas = texto.match(/[a-z]/g).length;
+                }
+                else {
+                    totalMinusculas = 0;
+                }
+            
+                if (totalSimbolos !== null){
+
+                    totalSimbolos = textoSinEspacios.match(/[^A-Za-z0-9]/g).length
+                }
+                else {
+                    totalSimbolos = 0;
+                }
+                var textoAreaDividido = textoArea.split(" ");
+                var numeroPalabras = textoAreaDividido.length;
+
+                document.getElementById('muestrame').innerHTML = "<p>Su texto: <strong>" + textoArea + "</strong><br>"
+                    + "Número de caracteres: <strong>" + palabras + "</strong><br>"
+                    + "Número de palabras: <strong>" + numeroPalabras + "</strong><br>"
+                    + "Número de dígitos: <strong>" + totalDigitos +"</strong><br>"
+                    + "Número de mayusculas: <strong>" + totalMayusculas +"</strong><br>"
+                    + "Número de minúsculas: <strong>" + totalMinusculas + "</strong><br>"
+                    + "Número de símbolos: <strong>" + totalSimbolos + "</strong><br></p>"
+            }
+        
+        </script>
+    </head>
+    <body> 
+        <h1>Ejercicio 14: Estadísticas.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>
+

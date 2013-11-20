@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = conversion; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function conversion() {
+                /*
+                 * Escribe un programa en javascript dentro de una página web que convierta de euros a pesetas y viceversa. 
+                 * Utiliza la función prompt para captar los datos.
+                 */
+                var eur = parseInt(prompt("Introduzca una cantidad en Euros."));
+                var totalPts = 0;
+                /* Con la función Math.round se redondean las cantidades.
+                 * totalPts = Math.round(eur * 166.386);
+                 * totalEur = Math.round(pts / 166.386);
+                 */
+                totalPts = eur * 166.386;
+                document.getElementById("mostrar").innerHTML = "La cantidad: " + eur + "€, equivalen a: " + totalPts + "pesetas.";
+
+                var pts = parseInt(prompt("Introduzca una cantidad en Pesetas."));
+                totalEur = pts / 166.386;
+                document.getElementById("mostrar").innerHTML = "La cantidad: " + pts + "Pts, equivalen a: " + totalEur + "€.";
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 05: Conversión de monedas.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

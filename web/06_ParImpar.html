@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Ejercicio 06</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            body{margin: 10%;background-color: #eee}            
+            h1,h2{text-align: center; color: blue}
+            h4{color: red}
+            #consejo{text-align: right}
+            #firma{font-style: italic;text-align: right;color: red} 
+        </style> 
+        <script type="text/javascript">
+            /*
+             * Que pida un número entero positivo 
+             * e indique si éste es par o impar.
+             */
+            window.onload = parimpar;
+            function parimpar() {
+                var numero = prompt("Introduzca un número.");
+                var mensaje = "";
+                var par = 2;
+
+                if (numero === "") {
+                    mensaje = "No ha introducido un número";
+                } else
+                if (numero % par === 0) {
+                    mensaje = "El número: " + numero + " es par";
+                } else {
+                    mensaje = "El número: " + numero + " es impar";
+                }
+                document.getElementById("muestra").innerHTML = mensaje;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 06: Par o Impar</h1>        
+        <div id="muestra"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+
+    </body>
+</html>

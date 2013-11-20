@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = metodoPrimo; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function metodoPrimo() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que pida al usuario en un prompt un número 
+                 * entero, y muestre en el cuerpo de la página los números primos menores o iguales a ese número. 
+                 */
+                
+                var primo = parseInt(prompt("Introduzca un número entero: "));
+                var div = 2;
+                var mensaje = "";
+                for (var i = 2; i < primo; i++){
+                    if (primo % i === 0){
+                        div++;
+                        break;
+                    }
+                }
+                if(div == 2){
+                    mensaje = ", <u>sí</u> es primo";
+                }
+                else{
+                    mensaje = ", <u>no</u> es primo."
+                }
+                document.getElementById("mostrar").innerHTML = "El número " + primo + mensaje;
+                
+                              
+                /*
+                 * Imrpimir por pantalla.
+                 * document.getElementById("mostrar").innerHTML = ;
+                 */
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 12: Números primos.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

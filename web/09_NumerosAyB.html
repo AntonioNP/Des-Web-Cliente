@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = sumaRango; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function sumaRango() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que pida al usuario en dos prompts 
+                 * dos números enteros A y B. El script debe validar que el segundo número B es mayor que el 
+                 * primero A.
+                 * En el cuerpo de la página se debe mostrar la siguiente información:
+                 * los números enteros que hay entre A y B ordenados de mayor a menor
+                 * los números enteros que hay entre A y B ordenados de menor a mayor
+                 * la suma de los números enteros que hay entre A y B-----------------
+                 * la suma de los números pares que hay entre A y B
+                 * la suma de los números impares que hay entre A y B
+                 * OJO, importante: utiliza un solo bucle for para resolver el ejercicio.
+                 */
+
+                var numA = parseInt(prompt("Introduzca un número de tipo entero."));
+                var numB = parseInt(prompt("Introduzca otro número entero y que sea mayor que el anterior."));
+                var i = 0;
+                var j = 0;
+                var menorMayor = "";
+                var mayorMenor = "";
+                var par = 2;
+                var sumaEnteros = 0;
+                var sumaPares = 0;
+                var sumaImpares = 0;
+
+
+                if (numB > numA) {
+                    for (i = numA, j = numB; i <= numB; i++, j--) {
+                        menorMayor += i + ", ";
+                        mayorMenor += j + ", ";
+                        sumaEnteros += parseInt(i);
+                        if (i % par === 0) {
+                            sumaPares += parseInt(i);
+                        } else {
+                            sumaImpares += parseInt(i);
+                        }
+                    }
+
+                    document.getElementById("mostrar").innerHTML = "<strong>Número A: </strong>" + numA +
+                            "<strong>, Número B: </strong>" + numB + "<hr><strong>De menor a mayor: </strong>"
+                            + menorMayor + "<br><strong>De mayor a menor: </strong>" + mayorMenor +
+                            "<br><strong>Suma de los números enteros</strong>: " + sumaEnteros + 
+                            "<br><strong>Suma de números pares: </strong>" + sumaPares +
+                            "<br><strong>Suma de números impares: </strong>"+ sumaImpares;
+
+                } else {
+                    alert("Recuerde. El segundo número debe ser mayor.");
+                    return;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 09: Suma en rangos.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 03</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            body{margin: 10%;background-color: #ddd}            
+            h1,h2{text-align: center; color: blue}
+            h4{color: red}
+            #enunciado{font-weight: bold; text-align: justify}
+            #consejo{text-align: right}
+            #firma{font-style: italic;text-align: right;color: red} 
+            table{border-style: solid; border-color: thistle}
+            th{text-align: center; color: darkred}
+            td{text-align: center; color: darkorchid}
+            .tiempo {background-color: thistle}
+        </style> 
+        <script type="text/javascript">
+            window.onload = aleatorio;
+            function aleatorio() {  // Número aleatorio entre 1 y 100
+                var numPosibilidades = 100 - 1;
+                var aleat = Math.random() * numPosibilidades;
+                aleat = Math.round(aleat);
+                var intentos = 1;               
+                var intMiliSeg = new Date();
+                var intTimeInicio;
+                var intTimeFinal;
+                var intTimeTotal;
+                
+                intTimeInicio = intMiliSeg.getTime();
+
+                var tabla = "<table>";
+                tabla += "<tr>";
+                tabla += "<th>Número de intentos</th>";
+                tabla += "<th>Último número introducido</th>";
+                tabla += "<th>Consejo</th>";
+                tabla += "</tr>";
+
+                do {
+                    tabla += "<tr>";    // Fila                    
+                    tabla += "<td>" + intentos + "</td>";
+
+                    var num = prompt("Introduzca un número entre 1 y 100.");
+
+                    tabla += "<td>" + num + "</td>";
+
+                    if (num >= 1 && num <= 100) {
+                        if (num == aleat) {
+                            mensaje = "¡Correcto!";
+                        }
+                        if (num != aleat) {
+                            var mensaje;
+                            if (num > aleat) {
+                                mensaje = "El número introducido es mayor";
+                            }
+                            if (num < aleat) {
+                                mensaje = "El número introducido es menor";
+                            }
+                        }
+
+                    } else {
+                        mensaje = "<h4>Recuerde, debe introducir un número entre 1 y 100</h4>";
+                    }
+                    tabla += "<td>" + mensaje + "</td>" + "</tr>";
+                    var intMiliSegTotal = new Date();
+                    intTimeFinal = intMiliSegTotal.getTime();
+                    intTimeTotal = (intTimeFinal - intTimeInicio) / 1000;
+                    intentos++;
+                    document.getElementById("numAleatorio").innerHTML = tabla + "<td colspan='3' class='tiempo'>" + "Usted ha tardado " + intTimeTotal + " segundos" + "</td>" + "</tr>" + "</table>";                    
+                } while (num != aleat)
+                }
+        </script>
+    </head>
+    <body>                
+        <div id="enunciado"><p>Introduzca un número comprendido entre 1 y 100.</p><hr></div>
+        <div id="numAleatorio"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = nombreMetodo; //en las funciones si ponemos el (), cargará automáticamente la función.
+     // Funcion que devuelve true si es primo, false en caso contrario  
+            function esPrimo(num) {  
+                var i=2;  
+                while (i*i<=num) {  
+                    if (num%i == 0) return(false);  
+                    i++;  
+                }  
+                return(true);  
+            }  
+              
+            // Ejemplo de uso  
+            
+            for (var n=0;n<100;n++) {  
+                document.getElementById("mostrar").innerHTML = n + " es primo? " + esPrimo(num) + "<br>";
+                //document.write(n + " es primo? " + esPrimo(n) + "<br>");  
+            }  
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 0_: _Enenuciado_.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

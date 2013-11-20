@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            table{margin: auto}
+            td {background-color: #ccffcc; text-align:center; width: 60px;}
+            td:last-child{width:100px}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = mostrarTabla; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function mostrarTabla() {
+                var i, j, total;
+                var tabla = "<table>";
+                for (i = 1; i <= 10; i++) {
+                    tabla += "<tr>";
+                    for (j = 1; j <= 10; j++) {
+                        total = i * j;
+                        tabla += "<td>";
+                        tabla += total;
+                        tabla += "</td>";
+                    }
+                    tabla += "</tr>"
+                }
+                tabla += "</table>";
+                document.getElementById("tabla01").innerHTML = tabla;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 01. Tabla de multiplicar.</h1>
+        <div id="tabla01"></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

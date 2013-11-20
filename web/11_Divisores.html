@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = obtenerdivisores; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function obtenerdivisores() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que pida al usuario en un prompt un número 
+                 * entero , obtenga sus divisores y los muestre en el cuerpo de la página.
+                 */
+                var div = parseInt(prompt("Introduzca un número entero: "));
+                var mensaje = "";
+                var bucle = true;
+                var resultado = 0;
+                var div2 = div;
+                
+                while(bucle){
+                    if (div2 === 0){
+                        bucle = false;
+                    } else {
+                        resultado = div / div2;
+                        if (resultado % 1 === 0) {
+                            mensaje += resultado + ", ";
+                        }
+                        div2--;                 
+                    }                   
+                }
+                document.getElementById("mostrar").innerHTML = "<strong>El número: </strong>" + div + "<br /><strong>Tiene los siguientes divisores: </strong>" + mensaje;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 11: Divisores.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = nombreFactorial; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function nombreFactorial() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que pida al usuario en un prompt un número 
+                 * entero, calcule su factorial y lo muestre en el cuerpo de la página. El script debe mostrar tambien 
+                 * la operación para el cálculo del factorial. 
+                 */
+                var fac = parseInt(prompt("Introduzca un número entero: "));              
+                var res = 1; 
+                for(var i = 2; i <= fac; i++){
+                    res = res * i; 
+                }
+           
+                 document.getElementById("mostrar").innerHTML = res;
+               
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 13: Factorial.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = ordenNumeros; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function ordenNumeros() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que pida tres números enteros y 
+                 * los muestre en el cuerpo de la página ordenados de menor a mayor. No utilices arrays para 
+                 * resolver el ejercicio.
+                 */
+
+                var n1 = parseInt(prompt("Introduzca el primer número."));
+                var n2 = parseInt(prompt("Introduzca el segundo número."));
+                var n3 = parseInt(prompt("Introduzca el tercer número."));
+
+                if (n1 <= n2 && n1 <= n3) { // n1 el pequeño
+                    if (n2 <= n3) {
+                        document.getElementById("mostrar").innerHTML = n1 + " < " + n2 + " < " + n3;
+                    } else {
+                        document.getElementById("mostrar").innerHTML = n1 + " < " + n3 + " < " + n2;
+                    }
+                }
+                if (n2 <= n1 && n2 <= n3) { //n2 el pequeño
+                    if (n1 <= n3) {
+                        document.getElementById("mostrar").innerHTML = n2 + " < " + n1 + " < " + n3;
+                    } else {
+                        document.getElementById("mostrar").innerHTML = n2 + " < " + n3 + " < " + n1;
+                    }
+                }
+                if (n3 <= n1 && n3 <= n2) { //n3 el pequeño
+                    if (n1 <= n2) {
+                        document.getElementById("mostrar").innerHTML = n3 + " < " + n1 + " < " + n2;
+                    } else {
+                        document.getElementById("mostrar").innerHTML = n3 + " < " + n2 + " < " + n1;
+                    }
+                }
+
+
+                // document.getElementById("mostrar").innerHTML = n1 + n2 + n3;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 07: Ordenar los tres números enteros de menor a mayor.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

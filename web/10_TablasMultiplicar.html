@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <script type="text/javascript">
+            window.onload = tabla; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function tabla() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que muestre en el cuerpo de la 
+                 * misma las tablas de multiplicar del 1 al 100. La página ha de ser responsiva, mediante 
+                 * el uso de bootstrap. Debe presentar 10 tablas de multiplicar en cada fila, en diez filas 
+                 * responsivas de forma que si se cambia el tamaño de la página las tablas cambian de 
+                 */
+               
+                var i, j, total;
+                 var tabla = "";
+                //  tabla = "<div class='span2'><table class='table table-striped table-bordered table-condensed'>";
+                for (i = 1; i <= 100; i++) {
+                    tabla += "<div class='span2'><table class='table table-striped table-bordered table-condensed'>";
+                    for (j = 1; j <= 10; j++) {
+                        total = i * j;
+                        tabla += "<tr><td>";
+                        tabla += i + " * " + j + " = " + total;
+                        tabla += "</tr></td>";
+
+                    }
+                    tabla +="</table></div>";
+                    
+                }
+                document.getElementById("tabla02").innerHTML = tabla;
+                // document.getElementById("tabla02").innerHTML = tabla += "</table></div>";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 10: Tablas de multiplicar.</h1>
+        <!--        <div id="tabla02" class="row"></div>  -->
+        <div id="tabla02" id="tabla02" class="row"></div> 
+        <!--<div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+                <div id="firma"><p>Antonio Navarro Peris.</p></div>
+                <a href="/Des_Web_Cliente/index.html">Volver</a>-->
+    </body>
+</html>

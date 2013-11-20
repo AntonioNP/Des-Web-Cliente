@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMC</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            body{margin: 10%;background-color: #ddd;}            
+            h1{text-align: center;}
+            #consejo{text-align: right;}
+            #firma{font-style: italic;text-align: right;color: red;}           
+        </style> 
+        <script type="text/javascript">
+            window.onload = calculo;
+            function calculo() {
+                var nombre = prompt("Introduzca su nombre.");
+                var peso = prompt("Introduzca su peso en kilogramos.");
+                var estatura = prompt("Introduzca su altura en metros.");                
+                var resultado = peso / Math.pow(estatura, 2);
+                if (resultado < 18.49) { //infrapeso
+                    document.getElementById("datosIMC").innerHTML = "<strong>" + nombre + "</strong>" + 
+                        ", siendo su peso de " + peso + 
+                        " kg y su altura de " + estatura + " m.</br> Su indice de masa corporal es: " + resultado
+                        + "</br>Ud. se encuentra en <ins>Infrapeso.</ins>";
+                }
+                if (resultado > 18.50 && resultado < 24.99){ //normal
+                    document.getElementById("datosIMC").innerHTML = "<strong>" + nombre + "</strong>" + 
+                        ", siendo su peso de " + peso + 
+                        " kg y su altura de " + estatura + " m.</br> Su indice de masa corporal es: " + resultado
+                        + "</br>Ud. se encuentra en un peso <ins>Normal.</ins>";
+                }
+                if (resultado > 25.00 && resultado < 29.99){ //sobrepeso
+                    document.getElementById("datosIMC").innerHTML = "<strong>" + nombre + "</strong>" + 
+                        ", siendo su peso de " + peso + 
+                        " kg y su altura de " + estatura + " m.</br> Su indice de masa corporal es: " + resultado
+                        + "</br>Ud. se encuentra en <ins>Sobrepeso.</ins>";
+                }
+                if (resultado > 30.00){ //obeso
+                    document.getElementById("datosIMC").innerHTML = "<strong>" + nombre + "</strong>" + 
+                        ", siendo su peso de " + peso + 
+                        " kg y su altura de " + estatura + " m.</br> Su indice de masa corporal es: " + resultado
+                        + "</br>Ud. es <ins>Obeso.</ins>";
+                }                
+            }
+        </script>
+    </head>
+    <body>        
+        <h1>Ejercicio IMC</h1>        
+        <div id="datosIMC"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

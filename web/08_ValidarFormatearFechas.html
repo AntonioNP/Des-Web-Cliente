@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = fechas; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function fechas() {
+                /*
+                 * Escribe un script en JavaScript dentro de una página web que pida una fecha al usuario 
+                 * en tres números enteros en tres prompts: 
+                 * uno para el dia
+                 * otro para el mes
+                 * otro para el año
+                 * Valida que: 
+                 * el dia esté en el rango 1..31 
+                 * el mes esté en el rango 1..12
+                 * el año esté en el rango 1950..2013
+                 * Utiliza el objeto Date para añadir el día de la semana.
+                 * Obten el mes a partir de una estructura switch
+                 * Finalmente, haz que se muestre en el cuerpo de la página la fecha introducida con el siguiente 
+                 * formato: Miércoles, 2 de Octubre de 2013
+                 */
+
+                /*
+                 * Declaración de variables
+                 */
+                var dia = prompt("Introduzca el día.");
+                var mes = prompt("Introduzca el mes.");
+                var anyo = prompt("Introduzca el año.");
+                var fecha = new Date();
+                var diaSe = new Array("Domingo, ", "Lunes, ", "Martes, ", "Miércoles, ", "Jueves, ", "Viernes, ", "Sábado, ");
+                var mesAn = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Sptiembre", "Octubre", "Noviembre", "Diciembre");
+
+                if (dia >= 1 && dia <= 31) {
+                    fecha.setMonth(mes, dia);
+                } else {
+                    alert("Recuerde que debe introducir un número entre el 1 y 31");
+                    return;
+                }
+
+                if (mes >= 1 && mes <= 12) {
+                    fecha.setMonth(mes - 1);
+                } else {
+                    alert("Recuerde que debe introducir un número entre el 1 y 12");
+                    return;
+                }
+
+                if (anyo >= 1950 && anyo <= 2013) {
+                    fecha.setYear(anyo);
+                } else {
+                    alert("Recuerde que debe introducir un número entre el 1950 y 2013");
+                    return;
+                }
+
+                document.getElementById("mostrar").innerHTML = diaSe[fecha.getDay()] + dia + " de " + mesAn[fecha.getMonth()] + " de " + anyo;
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 08: Validar y formatear fecha básico.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

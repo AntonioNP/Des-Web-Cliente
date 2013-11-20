@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = nombreSorteo; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function nombreSorteo() {
+                /*
+                 * Se va a efectuar un sorteo para otorgar x plazas de un curso entre y personas que hay inscritas. 
+                 * Utilizando un array, con los nombres de las personas (persona01, persona02, etc) realizar el sorteo y 
+                 * mostrar las personas que han sido agraciadas para matricularse en el curso por orden de sorteo. También 
+                 * mostrar una lista de espera ordenada con el resto de personas. 
+                 */
+                var inscripciones = new Array(" persona01", " persona02", " persona03", " persona04", " persona05", " persona06",
+                        " persona07", " persona08", " persona09", " persona10");
+                var mostrarPersonas = "", afortunados = "", recSi = "", imprimirSi = "", imprimirNo = "";
+
+                for (var i = 0; i < 5; i++) {
+                    var numPosibilidades = inscripciones.length - 1;
+                    var aleat = Math.random() * numPosibilidades;
+                    aleat = Math.round(aleat);
+                    //  afortunados = inscripciones[aleat].toString();
+                    //    if (afortunados !== inscripciones[aleat].toString()) {
+                    //        imprimirSi += recSi + " ";
+                    //    } else {
+                    //         imprimirNo += recSi + " ";
+                    //     }
+                    //    afortunados = inscripciones[aleat].toString();
+                }
+                
+                mostrarPersonas += inscripciones.join("<br/>");
+                document.getElementById("mostrar").innerHTML = "<strong>Personas inscritas:</strong><br />" + mostrarPersonas +
+                        "<hr><strong>Personas que se podrán matricular:</strong><br />" + imprimirSi +
+                        "<hr><strong>Personas en lista de espera:</strong><br />" + imprimirNo;
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 22: Sorteo.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

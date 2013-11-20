@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = tablas; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function tablas() {
+                /*
+                 * Escribe un programa en javascript que genere una tabla de equivalencias entre grados celsius y fahrenheid. 
+                 * Los grados celsius deben mostrarse discretamente en el rango del -100 hasta el 100 en incrementos de uno en uno. 
+                 */
+                var i, j, total;
+                var tabla = "<table border='1'>";
+                tabla += "<tr><th>Celsius</th><th>Farenheit</th></tr>";
+                for (i = -100; i <= 100; i++) {
+                    tabla += "<tr>";
+                    total = Math.round(i * 1.8 + 32);
+                    tabla += "<td>" + i + "</td>";
+                    tabla += "<td>";
+                    tabla += total;
+                    tabla += "</td>";
+                    tabla += "</tr>"
+                }
+                tabla += "</table>";
+                document.getElementById("mostrar").innerHTML = tabla;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 20: Tabla celsius y fahrenheit.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

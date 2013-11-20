@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANP</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css"> 
+            body{margin: 10%;background-color: #ddd;} 
+            #consejo{text-align: right}
+            h1{text-align: center}
+            #firma{font-style: italic;text-align: right;color: red;}  
+        </style> 
+        <script type="text/javascript">
+            window.onload = discursoPolitico; //en las funciones si ponemos el (), cargará automáticamente la función.
+            function discursoPolitico() {
+                /*
+                 * Escribir en javascript un generador de discursos aleatorio para políticos.
+                 * El político introduce la extensión del discurso en número de frases y el programa devuelve el discurso.
+                 * Para ello debes generar un conjunto de frases tomando una del primer grupo, una del segundo y una del tercero.
+                 * Genera puntos y aparte aleatorios cuando se lleven un mínimo de 5 frases.
+                 * Haz que el primer grupo de la frase inicial y el último grupo de la frase final del discurso sean frases 
+                 * únicas que no apararezcan dentro del discurso. 
+                 */
+                var lineas = prompt("Sr. Rajoy. Introduzca el número de frases que quiera generar para el discurso.");
+                var discurso = "";
+                var dis1 = new Array("No obstante ", "Por otra parte ", "Asimismo ", "Sin embargo no hemos de olvidar que ",
+                        "De igual manera ", "La práctica prueba que ", "Y no es menos cierto que ",
+                        "Las experiencias, ricas y diversas, muestran que ", "Y aún así ", "No obstante ",
+                        "Incluso, bien pudiéramos atrevernos a sugerir que ", "Es obvio señalar que ", "De hecho ",
+                        "También cabe añadir en este punto que ");
+                var dis2 = new Array("la realización de las premisas del programa ",
+                        "la complejidad de los estudios de los dirigentes ",
+                        "el aumento constante, en cantidad y en extensión, de nuestra actividad ",
+                        "la estructura actual de la organización ",
+                        "el nuevo modelo de actividad de la organización ",
+                        "el desarrollo continuo de distintas formas de actividad ",
+                        "nuestra actividad de información y propaganda ",
+                        "el reforzamiento y desarrollo de las estructuras ", "la consulta con los numerosos militantes ",
+                        "el inicio de la acción general de formación de las actitudes ",
+                        "un relanzamiento específico de todos los sectores implicados ",
+                        "la superación de experiencias difíciles ",
+                        "una aplicación indiscriminada de los factores confluyentes ",
+                        "el proceso consensuado de unas y otras aplicaciones concurrentes ",
+                        "nos obliga a un exhaustivo análisis ",
+                        "cumple un rol esencial en la formación ",
+                        "exige la precisión y la determinación ",
+                        "ayuda a la preparación y a la realización ",
+                        "garantiza la participación de un grupo importante en la formación ",
+                        "cumple deberes importantes en la determinación ",
+                        "facilita la creación ",
+                        "obstaculiza la apreciación de la importancia ",
+                        "ofrece un ensayo interesante de verificación ",
+                        "implica el proceso de reestructuración y modernización ",
+                        "habrá de significar un auténtico y eficaz punto de partida ",
+                        "permite en todo caso explicitar las razones fundamentales ",
+                        "asegura, en todo caso, un proceso muy sensible de inversión ",
+                        "deriva de una indirecta incidencia superadora");
+                var dis3 = new Array("de las condiciones financieras y administrativas existentes. ",
+                        "de las directivas de desarrollo para el futuro. ",
+                        "del sistema de participación general. ",
+                        "de las actitudes de los miembros hacia sus deberes ineludibles. ",
+                        "de las nuevas proposiciones. ",
+                        "de las direcciones educativas en el sentido del progreso. ",
+                        "del sistema de formación de cuadros que corresponda a las necesidades. ",
+                        "de las condiciones de las actividades apropiadas. ",
+                        "del modelo de desarrollo. ",
+                        "de las formas de acción. ",
+                        "de las básicas premisas adoptadas. ",
+                        "de toda una casuística de amplio espectro. ",
+                        "de los elementos generadores. ",
+                        "de toda una serie de criterios ideológicamente sistematizados en un frente común de actuación regeneradora. ");
+                for (var i = 0; i < lineas; i++) {
+                    var numDiscurso1 = dis1.length - 1;
+                    var aleat1 = Math.random() * numDiscurso1;
+                    aleat1 = Math.round(aleat1);
+                    var numDiscurso2 = dis2.length - 1;
+                    var aleat2 = Math.random() * numDiscurso2;
+                    aleat2 = Math.round(aleat2);
+                    var numDiscurso3 = dis3.length - 1;
+                    var aleat3 = Math.random() * numDiscurso3;
+                    aleat3 = Math.round(aleat3);
+
+                    discurso += dis1[aleat1] + dis2[aleat2] + dis3[aleat3];
+                }
+                document.getElementById("mostrar").innerHTML = discurso;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 21: Discurso político.</h1>
+        <div id="mostrar"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Ejercicio 04</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            body{margin: 10%;background-color: #eee}            
+            h1,h2{text-align: center; color: blue}
+            h4{color: red}
+            #consejo{text-align: right}
+            #firma{font-style: italic;text-align: right;color: red} 
+        </style> 
+        <script type="text/javascript">
+            window.onload = media;
+            function media() {
+                var entrada = prompt("Introduzca un número o fin.");
+                var num = [];
+                num.push(entrada);
+                var resultado = 0;
+                var fin = true;
+                var media = 0;
+
+                while (fin) {
+                    var entrada = prompt("Introduzca un número o fin.");
+                    switch (entrada) {
+                        case "fin":
+                            fin = false;
+                            break;
+                        case "":
+                            alert("No ha introducido ningún caracter")
+                            break;
+                        default:
+                            num.push(entrada);
+                    }
+                }
+
+                for (var j = 0; j < num.length; j++) {
+                    resultado += parseInt(num[j]);
+                }
+                
+                media = resultado/j;
+
+                document.getElementById("calMedia").innerHTML = "Cantidad de números introducidos: " + j + "<br>Suma total: " + resultado + "<br>Media: " + media;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Ejercicio 04. Calcular la media</h1>        
+        <div id="calMedia"></div>
+        <div id="consejo"><p>Pulse F5 para iniciar de nuevo</p></div>
+        <div id="firma"><p>Antonio Navarro Peris.</p></div>
+        <a href="/Des_Web_Cliente/index.html">Volver</a>
+    </body>
+</html>
